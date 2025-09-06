@@ -58,7 +58,7 @@
     ul { list-style: none; padding-left: 16px; }
     ul li::before {
       content: "• ";
-      color: #007aff; /* Apple blue accent */
+      color: #007aff;
       font-weight: bold;
     }
     .job, .project, .edu { margin-bottom: 16px; }
@@ -76,10 +76,37 @@
       gap: 16px;
     }
 
+    /* PDF section */
+    .pdf-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .pdf-section iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+    }
+    .download-btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #007aff;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background: #005bb5;
+    }
+
     /* Responsive */
     @media (max-width: 600px) {
       body { padding: 20px; }
       .skills-grid { grid-template-columns: 1fr; }
+      .pdf-section iframe { height: 400px; }
     }
 
     /* Print styles */
@@ -87,6 +114,7 @@
       body { background: #fff; padding: 0; }
       .container { box-shadow: none; border-radius: 0; padding: 20px; }
       a { color: black; text-decoration: none; }
+      .pdf-section { display: none; } /* Hide preview in print */
     }
   </style>
 </head>
@@ -184,7 +212,14 @@
         </div>
       </div>
     </div>
+
+    <!-- PDF Preview & Download -->
+    <div class="pdf-section">
+      <h2>Resume PDF</h2>
+      <iframe src="resume.pdf"></iframe>
+      <br>
+      <a href="resume.pdf" download="Herman_Tsoi_Resume.pdf" class="download-btn">⬇ Download PDF</a>
+    </div>
   </div>
 </body>
 </html>
-
